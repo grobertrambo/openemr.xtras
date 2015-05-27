@@ -12,7 +12,8 @@
 sudo apt-get install apache2-mpm-prefork mysql-server libapache2-mod-php5 libdate-calc-perl libdbd-mysql-perl libdbi-perl libhtml-parser-perl libtiff-tools libwww-mechanize-perl libxml-parser-perl php5 php5-mysql php5-cli php5-gd php5-xsl php5-curl php5-mcrypt php-soap imagemagick php5-json leafpad firefox lxde-core xorg ### "json ubuntu_13 and later" 
 # (optional...leafpad firefox lxde-core xorg)  
 # runs smooth no bugs ubuntu 15.04 full size server iso 
-# answer prompt for user input (yes,root,root)
+# answer prompt for user input (yes,root,root) openemr admin pass
+
 
 wget http://sourceforge.net/projects/openemr/files/OpenEMR%20Current/4.2.0/openemr-4.2.0.tar.gz
 tar -pxvzf openemr-4.2.0.tar.gz
@@ -27,6 +28,10 @@ exit # startx at this point
 
 # TODO 
 /
+
+# sudo apt-get install openssh-server
+# ssh admin@openemr
+# enter password
 	sudo leafpad /etc/apache2/sites-available/edit 000-default.conf
 	# change default sites from /var/www/html to /var/www/openemr 
 	firefox http:\\localhost
@@ -41,8 +46,8 @@ exit # startx at this point
 	ufw allow 443 # https
 	ufw allow 22 # ssh
 
-	# mod_rewrite all htttps
-	# .htaccess deny from all allow from ? (not use?) Do not allow direct web access to the following directories 
+	# mod_rewrite all https
+	# deny access
 	sites/*/documents
 	sites/*/era
 	sites/*/edi
