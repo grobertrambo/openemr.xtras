@@ -28,18 +28,21 @@ exit # startx at this point
 # TODO 
 /
 
-# sudo apt-get install openssh-server  
+# sudo apt-get install openssh-server  https://help.ubuntu.com/community/SSH/OpenSSH/Configuring
 # ssh admin@openemr
 # enter password
+
 	sudo leafpad /etc/apache2/sites-available/edit 000-default.conf
 	# change default sites from /var/www/html to /var/www/openemr 
 	firefox http:\\localhost
-	# http://www.open-emr.org/wiki/index.php/OpenEMR_4.2.0_Linux_Installation
-
+	# http://www.open-emr.org/wiki/index.php/OpenEMR_4.2.0_Linux_Installation      follow directions
+	
+	# http://www.open-emr.org/wiki/index.php/Securing_OpenEMR
 	# After install change these permissions
 	chmod 644 openemr/library/sqlconf.php chmod 600 openemr/acl_setup.php chmod 600 openemr/acl_upgrade.php chmod 600 openemr/sl_convert.php chmod 600 openemr/setup.php chmod 600 openemr/sql_upgrade.php chmod 600 openemr/gacl/setup.php chmod 600 openemr/ippf_upgrade.php
 
-	# mod_rewrite all https
+	# mod_rewrite all https   http://httpd.apache.org/docs/2.4/rewrite/avoid.html
+	# http://httpd.apache.org/docs/current/howto/htaccess.html
 	# deny access
 	sites/*/documents
 	sites/*/era
