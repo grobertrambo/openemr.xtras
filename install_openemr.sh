@@ -1,6 +1,7 @@
 #!/bin/sh
 # (dont forget to) chmod +x install_openemr.sh
 # (dont forget to) sudo ./install_openemr.sh
+# https://security.berkeley.edu/node/143
 
 if [[ $UID -ne 0 ]]; then
   echo "This script needs to be run as root (with sudo)"
