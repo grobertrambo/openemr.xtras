@@ -19,7 +19,6 @@ wget http://sourceforge.net/projects/openemr/files/OpenEMR%20Current/4.2.0/opene
 tar -pxvzf openemr-4.2.0.tar.gz
 mv -v openemr-4.2.0 /var/www/openemr
 rm  openemr-4.2.0.tar.gz
-rm openemr-4.2.0
 
 # go get a cold or hot drink and wait...
 exit # startx at this point
@@ -29,7 +28,7 @@ exit # startx at this point
 # TODO 
 /
 
-# sudo apt-get install openssh-server
+# sudo apt-get install openssh-server  
 # ssh admin@openemr
 # enter password
 	sudo leafpad /etc/apache2/sites-available/edit 000-default.conf
@@ -39,12 +38,6 @@ exit # startx at this point
 
 	# After install change these permissions
 	chmod 644 openemr/library/sqlconf.php chmod 600 openemr/acl_setup.php chmod 600 openemr/acl_upgrade.php chmod 600 openemr/sl_convert.php chmod 600 openemr/setup.php chmod 600 openemr/sql_upgrade.php chmod 600 openemr/gacl/setup.php chmod 600 openemr/ippf_upgrade.php
-
-	sudo ufw enable
-	ufw deny all
-	ufw allow 80 # http
-	ufw allow 443 # https
-	ufw allow 22 # ssh
 
 	# mod_rewrite all https
 	# deny access
