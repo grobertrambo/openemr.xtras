@@ -42,8 +42,8 @@ exit # startx at this point
 	chmod 644 openemr/library/sqlconf.php chmod 600 openemr/acl_setup.php chmod 600 openemr/acl_upgrade.php chmod 600 openemr/sl_convert.php chmod 600 openemr/setup.php chmod 600 openemr/sql_upgrade.php chmod 600 openemr/gacl/setup.php chmod 600 openemr/ippf_upgrade.php
 
 	# mod_rewrite all https   http://httpd.apache.org/docs/2.4/rewrite/avoid.html
-	# http://httpd.apache.org/docs/current/howto/htaccess.html
-	# deny access
+	# deny access or why not to use ? http://httpd.apache.org/docs/current/howto/htaccess.html
+	# deny direct access to these files and directories
 	sites/*/documents
 	sites/*/era
 	sites/*/edi
