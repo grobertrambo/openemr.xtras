@@ -7,7 +7,7 @@
 # to large deployments; in those scenarios a purpose-built tool should handle the roll-
 # out and deployment of these devices. SCM tools, preseed scripts and automated technology
 # such as PXE boot scripts should be used instead.
-#
+# https://wiki.ubuntu.com/LiveCDNetboot
 
 if [[ $UID -ne 0 ]]; then
 	echo "This script needs to be run as root (with sudo)"
