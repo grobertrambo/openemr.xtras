@@ -1,9 +1,11 @@
-#/bin/sh
-	################################
-	# chmod 777 install_openemr.sh #
-	# ./install_openemr.sh         #
-        # email: grobertrambo@gmail.com#
-	################################
+#!/bin/sh
+# (dont forget to) chmod +x install_openemr.sh
+# (dont forget to) sudo ./install_openemr.sh
+
+if [[ $UID -ne 0 ]]; then
+  echo "This script needs to be run as root (with sudo)"
+  exit 1
+fi
 
 # wget http://releases.ubuntu.com/15.04/ubuntu-15.04-server-i386.iso.torrent
 # install base ubuntu 15.04 server iso only no tweaks
@@ -18,7 +20,8 @@ sudo apt-get install apache2-mpm-prefork mysql-server libapache2-mod-php5 libdat
 wget http://sourceforge.net/projects/openemr/files/OpenEMR%20Current/4.2.0/openemr-4.2.0.tar.gz
 tar -pxvzf openemr-4.2.0.tar.gz
 mv -v openemr-4.2.0 /var/www/openemr
-rm  openemr-4.2.0.tar.gz
+rm openemr-4.2.0.tar.gz
+rm -v openemr-4.2.0
 
 # go get a cold or hot drink and wait...
 exit # startx at this point
