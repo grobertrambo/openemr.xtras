@@ -3,11 +3,6 @@
 # (dont forget to) sudo ./install_openemr.sh
 # https://security.berkeley.edu/node/143
 
-if [[ $UID -ne 0 ]]; then
-  echo "This script needs to be run as root (with sudo)"
-  exit 1
-fi
-
 # wget http://releases.ubuntu.com/15.04/ubuntu-15.04-server-i386.iso.torrent
 # install base ubuntu 15.04 server iso only no tweaks
 # auto security updates recommended
